@@ -1,0 +1,16 @@
+# Core notebook stack
+jupyterlab==4.2.5
+notebook==7.2.2
+ipywidgets==8.1.5
+nbformat==5.10.4
+
+# CV / numerics
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+matplotlib==3.9.2
+pillow==10.4.0
+
+# Training pipeline (Part B) — CPU wheels, installed separately in the
+# Dockerfile via the PyTorch CPU index for a much smaller image than the
+# default CUDA build
+# torch, torchvision -> see Dockerfile

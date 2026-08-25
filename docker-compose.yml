@@ -1,0 +1,21 @@
+services:
+  notebook:
+    build: .
+    container_name: vehicle-damage-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      # mount the notebook folder so edits/outputs persist on your machine,
+      # not just inside the container
+      - ./notebook:/workspace/notebook
+      # drop a downloaded dataset here later (see notebook's DATASETS table)
+      - ./data:/workspace/notebook/data
+    # Uncomment if you have an NVIDIA GPU + nvidia-container-toolkit installed
+    # and want real training speed for Part B:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
